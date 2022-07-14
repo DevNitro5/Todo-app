@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Raleway:wght@300;600&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#dee4e7] font-Montserrat text-gray-800 selection:bg-violet-600/80 selection:text-[#dee4e7] h-full;
+  }
+
+  input[type="checkbox"] {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .title {
+    @apply bg-gradient-to-bl from-purple-200 via-purple-400 to-purple-800 text-transparent bg-clip-text text-6xl font-bold text-center my-5 font-Raleway fade-ani;
+  }
+
+  .type-btn {
+    @apply uppercase pb-6 relative   border-black before:absolute before:w-[0%] before:rounded-md  before:h-1 before:left-[50%] before:bottom-0 before:bg-violet-600/80 hover:before:w-[100%] hover:before:left-0  before:transition-all before:duration-500 before:ease-in-out;
+  }
+
+  .clicked {
+    @apply after:absolute after:w-[100%] after:left-0 after:rounded-md  after:h-1 after:bottom-0 after:bg-violet-600/80;
+  }
+
+  .todo-input {
+    @apply border-2 border-[#BDBDBD] w-full rounded-md outline-none text-lg placeholder:text-[#BDBDBD]  focus:border-violet-600/50 focus:border-[2.2px]  focus:ring-0  bg-gray-200/50;
+  }
+
+  .add-todo-btn {
+    @apply px-6 bg-violet-600/80 ml-5 text-white rounded-md hover:scale-90 hover:shadow-lg transition-all duration-300 ease-in-out fade-ani;
+  }
+
+  .fade-ani {
+    animation: fades 0.7s linear;
+  }
+
+  @keyframes fades {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .scaleX-ani {
+    animation: scaleX 0.7s linear;
+  }
+
+  @keyframes scaleX {
+    0% {
+      transform: scaleX(0);
+    }
+    50% {
+      transform: scaleX(1.2);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }
+
+  .todo-item {
+    @apply bg-gray-100 py-5 px-5 rounded-lg shadow-md shadow-violet-300 flex justify-between flex-wrap gap-x-4 gap-y-2  origin-[0_50%] scale-ani;
+  }
+
+  .scale-ani {
+    animation: scale 0.35s linear;
+  }
+
+  @keyframes scale {
+    from {
+      transform: scale(0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .checkBox {
+    @apply outline-none focus:outline-none checked:text-violet-600/80  rounded mb-1 focus:ring-2  focus:ring-violet-600/80;
+  }
+
+  .todo {
+    @apply cursor-pointer ml-[0.6rem]  break-words;
+  }
+
+  .icon-btn {
+    @apply text-violet-700/80  text-xl hover:scale-[1.15] transition-all duration-300 ease-in-out fade-ani;
+  }
+
+  .todo-list {
+    @apply my-7 space-y-7 p-[0_0.5rem_3.5rem_0.5rem];
+  }
+}

@@ -32,7 +32,7 @@
 
 
 
-![screenshot](./Todo-app/todo-app/todo.png)
+
 
 
 todo
